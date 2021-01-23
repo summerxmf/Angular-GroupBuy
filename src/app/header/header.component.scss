@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+  ul {
+    display: flex;
+    overflow-x: scroll;
+
+    li {
+      margin: 0 5px;
+      white-space: nowrap;
+      a {
+        display: block;
+        &.active {
+          color: red;
+        }
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
