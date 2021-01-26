@@ -10,8 +10,10 @@
       white-space: nowrap;
       a {
         display: block;
+        padding: 5px 0;
         &.active {
           color: red;
+          border-bottom: 2px solid red;
         }
       }
     }
