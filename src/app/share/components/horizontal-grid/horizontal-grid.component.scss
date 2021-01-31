@@ -1,3 +1,32 @@
-input {
-  border: 1px solid #f00;
+// :host {
+// display: flex;
+// overflow-x: auto;
+// }
+.container {
+  display: grid;
+  place-content: stretch;
+  place-items: center;
+  grid-gap: 0.4rem;
+  grid-auto-flow: row;
+  background-color: #fff;
+  padding: 5px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.underline {
+  width: 20%;
+  height: 2px;
+  margin: 0 auto;
+
+  .highlight {
+    width: 50%;
+    height: 2px;
+    padding: 0;
+    background-color: red;
+  }
 }

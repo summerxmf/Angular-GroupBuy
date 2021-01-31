@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 
 export interface TopMenu {
+  id: number,
   title: string,
   link: string
 }
@@ -9,13 +10,11 @@ export interface TopMenu {
 @Component({
   selector: 'app-scrollable-tab',
   templateUrl: './scrollable-tab.component.html',
-  styleUrls: ['./scrollable-tab.component.scss']
+  styleUrls: ['./scrollable-tab.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class ScrollableTabComponent implements OnInit {
-  greeting(name: string) {
-    console.log("hello " + name);
-  }
+export class ScrollableTabComponent implements OnInit {  
   selectedIndex: number = 0;
   
   @Input()
@@ -28,10 +27,10 @@ export class ScrollableTabComponent implements OnInit {
 
   ngOnInit() {
   }
-  handleSelection(i:number) {
-    this.selectedIndex = i;
-    this.tabSelected.emit(i);
-    
+  
+  handleSelection(item: TopMenu, i: number) { 
+    this.selectedIndex = i;   
+    this.tabSelected.emit(item);    
   }
   
 

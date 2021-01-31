@@ -1,21 +1,23 @@
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 
 export interface ImageSlider {
-  imageUrl: string,
+  id:number,
+  imgUrl: string,
   link: string,
-  caption: string;
-  imgUrl?: string
+  caption: string
+  
 }
 @Component({
   selector: 'app-image-slider',
   templateUrl: './image-slider.component.html',
-  styleUrls: ['./image-slider.component.scss']
+  styleUrls: ['./image-slider.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input()
   scrollHeight = '160px';
   @Input()
-  sliders: ImageSlider[] = [];
+  sliders: ImageSlider[];
   @Input()
   intervalBySeconds: number = 2
   @ViewChild('imageSlider',{static: true}) imgSlider: ElementRef;

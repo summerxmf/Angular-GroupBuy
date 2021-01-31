@@ -1,0 +1,15 @@
+@baseUrl = https://jsonplaceholder.typicode.com
+
+GET {{baseUrl}}/posts HTTP/1.1
+
+###
+POST {{baseUrl}}/posts
+Content-Type: application/json
+
+{
+  "title": "这是一个测试帖子的标题",
+  "body": "这是一个测试帖子的内容",
+  "userId": 1
+}
+###
+GET http://apis.imooc.com/api/banners?icode=F0ED23C36A1A1519

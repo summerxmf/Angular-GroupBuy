@@ -1,7 +1,7 @@
 <div class="container">
   <ul class="tabbar">
     <li *ngFor="let item of menus; let i = index">
-      <a href="javascript:;" [class.active]="selectedIndex === i" (click)="handleSelection(i)">{{item.title}}</a>
+      <a [class.active]="selectedIndex === i" (click)="handleSelection(item, i)">{{item.title}}</a>
     </li>    
   </ul>
 </div>

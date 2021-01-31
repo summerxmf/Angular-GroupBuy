@@ -1,0 +1,16 @@
+<div *ngIf="(selectedTabLink$ |async)==='special'" else others>
+  <app-image-slider [sliders]="sliders$ | async" intervalBySeconds="100"></app-image-slider>
+  <app-horizontal-grid>
+    <div appGridItem *ngFor="let item of channels">
+      <img [src]="item.icon" alt="" appGridItemImage="2rem">
+      <span appGridItemTitle="0.5rem">{{item.title}}</span>
+  </div>  
+  </app-horizontal-grid>
+</div>
+<div #others>Other works!</div>
+<!-- <a [routerLink]="[ './grand']">link to grand</a> -->
+<a [routerLink]="[ './grand' ]" routerLinkActive="active" [queryParams]="{name:'zhangsan'}">link to somewhere</a>
+<hr/>
+<a [routerLink]="[ {outlets: { second:['aux']}} ]" routerLinkActive="active">link to aux</a>
+<router-outlet></router-outlet>
+<router-outlet name="second"></router-outlet>
