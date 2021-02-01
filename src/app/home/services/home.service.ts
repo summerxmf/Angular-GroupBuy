@@ -201,7 +201,7 @@ export class HomeService {
   getChannels() {
     return this.channels;
   }
-  getSliders() {
+  getSliders() {    
     return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`, 
           {params: {icode: `${environment.icode}`}}          
         );

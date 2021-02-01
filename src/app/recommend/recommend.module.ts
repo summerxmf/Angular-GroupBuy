@@ -5,8 +5,6 @@ import { ShareModule } from '../share/share.module';
 import { RecommendContainerComponent } from './components/recommend-container/recommend-container.component';
 
 
-
-
 @NgModule({
   declarations: [
     RecommendContainerComponent

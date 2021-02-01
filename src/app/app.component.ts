@@ -15,8 +15,7 @@ export class AppComponent implements OnInit {
   selectIndex$: Observable<number>;
   constructor(private router: Router) {
   }
-  ngOnInit(): void {
-    
+  ngOnInit(): void {    
    this.selectIndex$ = this.router.events
    .pipe(
      filter(ev => ev instanceof NavigationEnd),

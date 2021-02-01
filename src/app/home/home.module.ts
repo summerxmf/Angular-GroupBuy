@@ -5,7 +5,7 @@ import { ShareModule } from '../share/share.module';
 import { HomeContainerComponent } from './components/home-container/home-container.component';
 import { HomeDetailComponent } from './components/home-detail/home-detail.component';
 import { HomeAuxComponent } from './components/home-aux/home-aux.component';
-import { HomeGrandComponent } from './components/home-grand/home-grand.component';
+// import { HomeGrandComponent } from './components/home-grand/home-grand.component';
 import { HomeService, token } from './services';
 
 
@@ -14,7 +14,7 @@ import { HomeService, token } from './services';
     HomeContainerComponent,
     HomeDetailComponent,
     HomeAuxComponent,
-    HomeGrandComponent
+    // HomeGrandComponent
   ],
   providers: [
     HomeService,

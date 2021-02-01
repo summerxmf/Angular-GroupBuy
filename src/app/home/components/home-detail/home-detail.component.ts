@@ -4,7 +4,7 @@ import { fromEventPattern, Observable, Subscription } from 'rxjs';
 import { Channel } from 'src/app/share/components/horizontal-grid/horizontal-grid.component';
 import { ImageSlider } from 'src/app/share/components/image-slider/image-slider.component';
 import { HomeService } from '../../services';
-import {filter, map} from'rxjs/Operators'
+import {filter, map, tap} from'rxjs/Operators'
 
 
 @Component({
@@ -16,7 +16,8 @@ import {filter, map} from'rxjs/Operators'
 export class HomeDetailComponent implements OnInit {
   // selectedTabLink: string = 'special'
   selectedTabLink$: Observable<string>;
-  sliders$: Observable<ImageSlider[]>;
+  sliders$: Observable<ImageSlider[]>
+  
   channels: Channel[];
   
   constructor(
@@ -29,12 +30,11 @@ export class HomeDetailComponent implements OnInit {
     .pipe(
       filter(params=> params.has('tabLink')),
       map(params=> params.get('tabLink'))
-    );
-
-    
+    );  
     
 
-    this.sliders$ = this.service.getSliders();
+    this.sliders$ = this.service.getSliders()
+    
 
     this.channels = this.service.getChannels();
     

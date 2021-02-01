@@ -17,7 +17,7 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input()
   scrollHeight = '160px';
   @Input()
-  sliders: ImageSlider[];
+  sliders: ImageSlider[] = [];
   @Input()
   intervalBySeconds: number = 2
   @ViewChild('imageSlider',{static: true}) imgSlider: ElementRef;
@@ -34,8 +34,6 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {    
   }
   ngAfterViewInit(): void {
-    
-    console.log(this.imgSlider.nativeElement.scrollWidth/this.sliders.length)
 
     this.intervalId = setInterval(()=>{
         

@@ -5,7 +5,6 @@ import { HomeContainerComponent } from './home/components/home-container/home-co
 
 const routes: Routes = [
   
-  
 ];
 
 @NgModule({
