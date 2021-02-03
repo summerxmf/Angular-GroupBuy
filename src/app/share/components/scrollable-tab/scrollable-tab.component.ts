@@ -15,10 +15,9 @@ export interface TopMenu {
 })
 
 export class ScrollableTabComponent implements OnInit {  
-  selectedIndex: number = 0;
-  
-  @Input()
-  menus: TopMenu[] = []  
+  // selectedIndex: number = 0;  
+  @Input() menus: TopMenu[] = [];
+  @Input() selectedIndex: number;
   
   @Output()
   tabSelected = new EventEmitter()
@@ -28,11 +27,10 @@ export class ScrollableTabComponent implements OnInit {
   ngOnInit() {
   }
   
-  handleSelection(item: TopMenu, i: number) { 
-    this.selectedIndex = i;   
-    this.tabSelected.emit(item);    
-  }
-  
+  handleSelection([item, i]) { 
+    // this.selectedIndex = i;   
+    this.tabSelected.emit([item, i]);    
+  }  
 
 }
 

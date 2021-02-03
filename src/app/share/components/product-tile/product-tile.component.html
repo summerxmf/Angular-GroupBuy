@@ -1,0 +1,18 @@
+
+<div class="container">
+  <img [src]="product.imageUrl" alt="" class="product-image">
+  <div class="product-title ellipsis">
+    {{product.title | slice: 0:13}}
+  </div>
+  <div class="product-tags" appTag>
+    <span *ngFor="let tag of product.tags">
+      {{tag}}
+    </span>
+    {{product.tags}}
+  </div>
+  <div class="product-price">
+    <h3 class="price-section">{{product.price | currency}}</h3>
+    <span class="price-desc">{{product.priceDesc}}</span>
+    <span class="price-more">more</span>  
+  </div>
+</div>

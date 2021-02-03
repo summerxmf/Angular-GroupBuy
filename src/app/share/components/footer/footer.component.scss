@@ -1,3 +1,10 @@
+// :host {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: 999;
+// }
 .footer {
   display: flex;
   justify-content: space-around;
@@ -10,7 +17,7 @@
 
     img {
       display: block;
-      width: 1.5rem;
+      width: 1.5rem;      
     }
   }
 }

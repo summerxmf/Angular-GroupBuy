@@ -9,6 +9,11 @@ import { GridItemDirective } from './derectives/grid-item.directive';
 import { GridItemTitleDirective } from './derectives/grid-item-title.directive';
 import { FooterComponent } from './components/footer/footer.component';
 import { CountDownComponent } from './components/count-down/count-down.component';
+import { VerticalGridComponent } from './components/vertical-grid/vertical-grid.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { TagDirective } from './derectives/tag.directive';
+import { AvatarDirective } from './derectives/avatar.directive';
+import { ProductTileComponent } from './components/product-tile/product-tile.component';
 
 
 @NgModule({
@@ -21,7 +26,11 @@ import { CountDownComponent } from './components/count-down/count-down.component
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
-    
+    VerticalGridComponent,
+    ProductCardComponent,
+    ProductTileComponent,
+    TagDirective,
+    AvatarDirective
   ],
   imports: [
     CommonModule,
@@ -37,7 +46,12 @@ import { CountDownComponent } from './components/count-down/count-down.component
     GridItemDirective,
     GridItemTitleDirective,
     GridItemImageDirective,
-    FooterComponent    
+    VerticalGridComponent,
+    FooterComponent,
+    ProductCardComponent,
+    ProductTileComponent,
+    TagDirective,
+    AvatarDirective
   ]
 })
 export class ShareModule { }

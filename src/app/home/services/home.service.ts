@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Channel } from 'src/app/share/components/horizontal-grid/horizontal-grid.component';
 import { ImageSlider } from 'src/app/share/components/image-slider/image-slider.component';
 import { TopMenu } from 'src/app/share/components/scrollable-tab/scrollable-tab.component';
+import { Ad, Product } from 'src/app/share/domain';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -15,8 +16,8 @@ export class HomeService {
   topMenus: TopMenu[] =  [
     {
       id: 1,
-      title: 'Special',
-      link: 'special'
+      title: 'Hot',
+      link: 'hot'
     },
     {
       id: 2,
@@ -205,5 +206,14 @@ export class HomeService {
     return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`, 
           {params: {icode: `${environment.icode}`}}          
         );
+  }
+  getAdsByTab(tab:string) {
+    return this.http.get<Ad[]>(`${environment.baseUrl}/ads`, 
+      {params: {icode: `${environment.icode}`, categories_like: tab}})
+  }
+
+  getProductsByTab(tab:string) {
+    return this.http.get<Product[]>(`${environment.baseUrl}/products`, 
+      {params: {icode: `${environment.icode}`, categories_like: tab}})
   }
 }

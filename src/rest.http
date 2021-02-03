@@ -1,4 +1,7 @@
 @baseUrl = https://jsonplaceholder.typicode.com
+@host= http://apis.imooc.com/api
+
+@iCode = 25CD6C99F4575679
 
 GET {{baseUrl}}/posts HTTP/1.1
 
@@ -12,4 +15,11 @@ Content-Type: application/json
   "userId": 1
 }
 ###
-GET http://apis.imooc.com/api/banners?icode=F0ED23C36A1A1519
+GET http://apis.imooc.com/api/banners?icode=25CD6C99F4575679
+###
+
+GET {{host}}/ads?icode={{iCode}}&categories_like=cars HTTP/1.1
+
+###
+
+GET {{host}}/products?icode={{iCode}}&categories_like=cars HTTP/1.1

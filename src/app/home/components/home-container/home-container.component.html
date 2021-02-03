@@ -1,7 +1,12 @@
 <app-scrollable-tab 
-  [menus]="topMenus" 
+  [menus]="topMenus"
+  [selectedIndex]="selectedTabIndex"
   (tabSelected)="handleTabSelected($event)"
+  class="scroll-tab"
 >
 </app-scrollable-tab>
-<router-outlet></router-outlet>
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
+
 

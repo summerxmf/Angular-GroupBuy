@@ -4,7 +4,11 @@ import { pathToFileURL } from 'url';
 import { HomeContainerComponent } from './home/components/home-container/home-container.component';
 
 const routes: Routes = [
-  
+  {
+    path:'',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
