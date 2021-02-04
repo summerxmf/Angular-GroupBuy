@@ -1,12 +1,11 @@
-.main {
-  // flex-grow: 1;
+:host {
+  flex-grow: 1;
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  height: calc(100% - 3rem);
+  // height: calc(100% - 3rem);
 }
-
 
 .ad-container {
   padding: 0 0.5rem;

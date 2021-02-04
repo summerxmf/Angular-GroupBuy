@@ -202,18 +202,25 @@ export class HomeService {
   getChannels() {
     return this.channels;
   }
-  getSliders() {    
+  getSliders() {      
     return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`, 
           {params: {icode: `${environment.icode}`}}          
         );
   }
-  getAdsByTab(tab:string) {
+  getAdsByTab(tab:string) {    
     return this.http.get<Ad[]>(`${environment.baseUrl}/ads`, 
-      {params: {icode: `${environment.icode}`, categories_like: tab}})
+      {params: {icode: `${environment.icode}`, categories_like: tab}})  
+    
   }
 
   getProductsByTab(tab:string) {
-    return this.http.get<Product[]>(`${environment.baseUrl}/products`, 
-      {params: {icode: `${environment.icode}`, categories_like: tab}})
+    return this.http.get<Product[]>(`${environment.baseUrl}/products`, {
+      params: {
+        categories_like: tab,
+        icode: `${environment.icode}`
+      }
+    });
+    // return this.http.get<Product[]>(`${environment.baseUrl}/products`, 
+    //   {params: {icode: `${environment.icode}`, categories_like: tab}})
   }
 }

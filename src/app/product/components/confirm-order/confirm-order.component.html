@@ -1,0 +1,66 @@
+<div class="container" *ngIf="item$ | async as item">
+  <div class="title-bar">
+    <app-back-button [isFloat]="false"></app-back-button>
+    <span>Confirm</span>
+  </div>
+  <div class="content">
+    <div class="address-bar">
+      <img src="assets/icons/location.png" alt="" class="location" />
+      <div class="name-and-mobile">
+        <span class="name">
+          Smith{{unitPrice$ | async}}
+        </span>
+        <span class="mobile">
+          0434 848866
+        </span>
+      </div>
+      <div class="address">
+        83 Chapel Lane, Baulkham Hills
+      </div>
+      <img src="assets/icons/navigate_next.png" alt="" class="more" />
+    </div>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div class="shop">
+      <img src="assets/icons/brand.png" alt="" />
+      <span>Sports Shop</span>
+    </div>
+    <div class="product-bar">
+      <img
+        [src]="item.variant.productVariantImages[0].imgUrl"
+        alt=""
+        class="product-image"
+      />
+      <span class="product-name">{{ item.variant.product.title }}</span>
+      <div class="product-spec">style：{{ item.variant.name }}</div>
+      <div class="product-price">
+        <span>{{ item.variant.price | currency}}/Item</span>
+        <span class="price-condition">free return</span>
+      </div>
+    </div>
+    <app-product-amount
+      [count]="item.count"
+      (amountChange)="handleAmountChange($event)"
+    ></app-product-amount>
+    <app-payment [payments]="payments"></app-payment>
+  </div>
+  <div class="toolbar">
+    <div class="total-price">
+      <span>Order Total：</span>
+      <span class="price-section">
+        
+        {{totalPrice | currency}}
+      </span>
+      <span class="price-condition">&nbsp;Free delivery</span>
+    </div>
+    <div class="pay" (click)="handlePay()">
+      <div>Pay Now</div>
+    </div>
+  </div>
+</div>

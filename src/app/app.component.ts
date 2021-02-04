@@ -1,8 +1,9 @@
-import { TranslationWidth } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map, tap } from 'rxjs/Operators';
+import { DialogService } from './dialog/services/dialog.service';
 import { TabItem } from './share/domain';
 
 @Component({
@@ -13,7 +14,7 @@ import { TabItem } from './share/domain';
 export class AppComponent implements OnInit {  
   title = 'angular-shopping'; 
   selectIndex$: Observable<number>;
-  constructor(private router: Router) {
+  constructor(private router: Router, private dialogService: DialogService) {
   }
   ngOnInit(): void {    
    this.selectIndex$ = this.router.events
@@ -36,6 +37,9 @@ export class AppComponent implements OnInit {
   handleTabSelect(tab: TabItem) {
     this.router.navigate([tab.link])
 
+  }
+  removeDialog() {
+    this.dialogService.close();
   }
 
 }

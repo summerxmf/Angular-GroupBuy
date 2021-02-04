@@ -14,6 +14,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { TagDirective } from './derectives/tag.directive';
 import { AvatarDirective } from './derectives/avatar.directive';
 import { ProductTileComponent } from './components/product-tile/product-tile.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
+import { DialogModule } from '../dialog/dialog.module';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { ProductTileComponent } from './components/product-tile/product-tile.com
     VerticalGridComponent,
     ProductCardComponent,
     ProductTileComponent,
+    BackButtonComponent,    
     TagDirective,
     AvatarDirective
   ],
@@ -50,8 +53,10 @@ import { ProductTileComponent } from './components/product-tile/product-tile.com
     FooterComponent,
     ProductCardComponent,
     ProductTileComponent,
+    BackButtonComponent,
     TagDirective,
-    AvatarDirective
+    AvatarDirective,
+    DialogModule
   ]
 })
 export class ShareModule { }

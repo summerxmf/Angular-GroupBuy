@@ -11,6 +11,8 @@ import { RecommendModule } from './recommend/recommend.module';
 import { ChatModule } from './chat/chat.module';
 import { MyModule } from './my/my.module';
 import { CategoryModule } from './category/category.module';
+import { ProductModule } from './product/product.module';
+
 
 @NgModule({
   declarations: [			
@@ -25,7 +27,9 @@ import { CategoryModule } from './category/category.module';
     RecommendModule,
     CategoryModule,
     ChatModule,
-    MyModule
+    MyModule,
+    ProductModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

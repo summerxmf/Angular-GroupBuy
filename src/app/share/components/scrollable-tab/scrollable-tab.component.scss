@@ -1,27 +1,33 @@
-.container {
-  width: 100%;
-  overflow: hidden;
-  ul {
-    display: flex;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    padding: 0;
-    margin: 0;
-    li {
-      margin: 5px;
-      white-space: nowrap;
-      a {
-        display: block;
-        color: #000;
-        padding: 5px 0;
-        &.active {
-          color: red;
-          border-bottom: 2px solid red;
-        }
+// .container {
+//   width: 100%;
+//   overflow: hidden;
+// }
+// :host {
+//   flex-shrink: 0;
+//   position: sticky;
+//   top: 0;
+//   z-index: 999;
+// }
+ul {
+  display: flex;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  margin: 0;
+  li {
+    margin: 5px;
+    white-space: nowrap;
+    a {
+      display: block;
+      color: #000;
+      padding: 5px 0;
+      &.active {
+        color: red;
+        border-bottom: 2px solid red;
       }
     }
   }
-  ::-webkit-scrollbar {
-    display: none;
-  }
+}
+::-webkit-scrollbar {
+  display: none;
 }

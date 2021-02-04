@@ -5,6 +5,11 @@
 //   width: 100%;
 //   z-index: 999;
 // }
+// :host {
+//   flex-shrink: 0;
+//   margin: 0;
+//   padding: 0;
+// }
 .footer {
   display: flex;
   justify-content: space-around;
@@ -17,7 +22,7 @@
 
     img {
       display: block;
-      width: 1.5rem;      
+      width: 1.5rem;
     }
   }
 }

@@ -10,8 +10,8 @@ POST {{baseUrl}}/posts
 Content-Type: application/json
 
 {
-  "title": "这是一个测试帖子的标题",
-  "body": "这是一个测试帖子的内容",
+  "title": "This is a title for test",
+  "body": "This is content for test",
   "userId": 1
 }
 ###
@@ -21,5 +21,7 @@ GET http://apis.imooc.com/api/banners?icode=25CD6C99F4575679
 GET {{host}}/ads?icode={{iCode}}&categories_like=cars HTTP/1.1
 
 ###
-
 GET {{host}}/products?icode={{iCode}}&categories_like=cars HTTP/1.1
+
+###
+GET {{host}}/productVariants?_expand=product&_embed=productVariantImages&productId=1&icode={{iCode}} HTTP/1.1
